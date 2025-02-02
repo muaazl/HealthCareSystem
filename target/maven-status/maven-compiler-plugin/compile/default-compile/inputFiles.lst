@@ -1,0 +1,18 @@
+src/controller/AppointmentController.java
+src/controller/DoctorController.java
+src/model/Patient.java
+src/model/Schedule.java
+src/controller/PatientController.java
+src/model/Appointment.java
+src/util/DatabaseConnection.java
+src/util/EmailServices.java
+src/view/BookAppointments.java
+src/view/Manage_Doctors.java
+src/view/Reports.java
+src/view/Manage_Pharmacy_Inventory.java
+src/model/Doctor.java
+src/view/UI.java
+src/controller/DoctorController.java (removing as repeated controller path).
+src/view/Manage_Patients.java
+src/model/Doctor ( removing model.Supplier.java, since Doctor model has already been used)
+src/com/mycompany/healthcaresystem/HealthCareSystem.java
