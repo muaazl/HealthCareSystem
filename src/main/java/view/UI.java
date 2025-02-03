@@ -1,19 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view;
-import javax.swing.JOptionPane;
 
+import javax.swing.JOptionPane;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.awt.Desktop;
+
+
 
 public class UI extends javax.swing.JFrame {
 
@@ -24,35 +21,6 @@ public class UI extends javax.swing.JFrame {
         initComponents();
         System.out.println("Welcome!");
     }
-    
-    private void generateAndOpenPDFReport() {
-        Document document = new Document();
-        String filePath = "Report.pdf";
-        try {
-            // Generate PDF
-            PdfWriter.getInstance(document, new FileOutputStream(filePath));
-            document.open();
-            document.add(new Paragraph("Monthly Sales Report"));
-            document.add(new Paragraph("Total Sales: $XXXXXX")); // Replace with dynamic data
-            
-            // Add more paragraphs or content to your report
-            
-            document.close();
-
-            // Open PDF
-            File pdfFile = new File(filePath);
-            if (Desktop.isDesktopSupported()) {
-                Desktop.getDesktop().open(pdfFile);
-            } else {
-                JOptionPane.showMessageDialog(this, "Desktop is not supported, unable to open PDF.", "Error", JOptionPane.ERROR_MESSAGE);
-            }
-
-        } catch (DocumentException | IOException e) {
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Error generating or opening PDF.", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-    }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -70,7 +38,6 @@ public class UI extends javax.swing.JFrame {
         Generate_Monthly_Reports = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         Book_Appointments = new javax.swing.JButton();
-        Report = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -120,70 +87,60 @@ public class UI extends javax.swing.JFrame {
             }
         });
 
-        Report.setBackground(new java.awt.Color(153, 255, 204));
-        Report.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        Report.setText("Report");
-        Report.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ReportActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(155, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(136, 136, 136))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(316, 316, 316)
-                        .addComponent(Book_Appointments, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(85, 85, 85)
-                        .addComponent(Manage_Patient_Records)
-                        .addGap(18, 18, 18)
-                        .addComponent(Manage_Doctor_Schedules, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
-                        .addComponent(Manage_Pharmacy_Inventory)
-                        .addGap(18, 18, 18)
-                        .addComponent(Generate_Monthly_Reports))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(352, 352, 352)
-                        .addComponent(Report)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addContainerGap(155, Short.MAX_VALUE)
+                                .addComponent(jLabel1)
+                                .addGap(136, 136, 136))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(316, 316, 316)
+                                                .addComponent(Book_Appointments, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(85, 85, 85)
+                                                .addComponent(Manage_Patient_Records)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(Manage_Doctor_Schedules, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(29, 29, 29)
+                                                .addComponent(Manage_Pharmacy_Inventory)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(Generate_Monthly_Reports))
+                                )
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(54, 54, 54)
-                .addComponent(jLabel1)
-                .addGap(86, 86, 86)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Manage_Doctor_Schedules, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Manage_Pharmacy_Inventory, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Generate_Monthly_Reports, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Manage_Patient_Records, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
-                .addComponent(Book_Appointments, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addComponent(Report)
-                .addContainerGap(113, Short.MAX_VALUE))
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(54, 54, 54)
+                                .addComponent(jLabel1)
+                                .addGap(86, 86, 86)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(Manage_Doctor_Schedules, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(Manage_Pharmacy_Inventory, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(Generate_Monthly_Reports, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(Manage_Patient_Records, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(39, 39, 39)
+                                .addComponent(Book_Appointments, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+
+                                .addContainerGap(113, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
 
         // --- Start of Custom UI Code ---
         getContentPane().setBackground(new java.awt.Color(240, 240, 240));
@@ -211,23 +168,19 @@ public class UI extends javax.swing.JFrame {
         Manage_Pharmacy_Inventory.setFocusPainted(false);
         Manage_Pharmacy_Inventory.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51,153,255)),javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10)));
 
+
         Generate_Monthly_Reports.setBackground(new java.awt.Color(51, 153, 255));
         Generate_Monthly_Reports.setForeground(java.awt.Color.WHITE);
         Generate_Monthly_Reports.setFocusPainted(false);
         Generate_Monthly_Reports.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51,153,255)),javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10)));
 
+
         Book_Appointments.setBackground(new java.awt.Color(51, 153, 255));
         Book_Appointments.setForeground(java.awt.Color.WHITE);
         Book_Appointments.setFocusPainted(false);
         Book_Appointments.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51,153,255)),javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10)));
-
-        Report.setBackground(new java.awt.Color(51, 153, 255));
-        Report.setForeground(java.awt.Color.WHITE);
-        Report.setFocusPainted(false);
-        Report.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51,153,255)),javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10)));
-
-
         // --- End of Custom UI Code ---
+
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -240,23 +193,23 @@ public class UI extends javax.swing.JFrame {
     }//GEN-LAST:event_Manage_Patient_RecordsActionPerformed
 
     private void Manage_Doctor_SchedulesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Manage_Doctor_SchedulesActionPerformed
-         Manage_doctor_schedules manageDoctorSchedulesWindow = new Manage_doctor_schedules();
-         manageDoctorSchedulesWindow.setVisible(true);
-         this.dispose();
+        Manage_doctor_schedules manageDoctorSchedulesWindow = new Manage_doctor_schedules();
+        manageDoctorSchedulesWindow.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_Manage_Doctor_SchedulesActionPerformed
 
     private void Manage_Pharmacy_InventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Manage_Pharmacy_InventoryActionPerformed
         // TODO add your handling code here:
-         Manage_pharmacy_inventory managePharmacyInventoryWindow = new Manage_pharmacy_inventory();
-         managePharmacyInventoryWindow.setVisible(true);
-         this.dispose();
+        Manage_pharmacy_inventory managePharmacyInventoryWindow = new Manage_pharmacy_inventory();
+        managePharmacyInventoryWindow.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_Manage_Pharmacy_InventoryActionPerformed
 
     private void Generate_Monthly_ReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Generate_Monthly_ReportsActionPerformed
         // TODO add your handling code here:
-         Reports manageReportsWindow = new Reports ();
-         manageReportsWindow.setVisible(true);
-         this.dispose();
+        Generate_reports generateReportsWindow = new Generate_reports ();
+        generateReportsWindow.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_Generate_Monthly_ReportsActionPerformed
 
     private void Book_AppointmentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Book_AppointmentsActionPerformed
@@ -265,9 +218,6 @@ public class UI extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_Book_AppointmentsActionPerformed
 
-    private void ReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReportActionPerformed
-        generateAndOpenPDFReport();
-    }//GEN-LAST:event_ReportActionPerformed
 
     /**
      * @param args the command line arguments
@@ -305,8 +255,7 @@ public class UI extends javax.swing.JFrame {
     private javax.swing.JButton Generate_Monthly_Reports;
     private javax.swing.JButton Manage_Pharmacy_Inventory;
     private javax.swing.JButton Manage_Doctor_Schedules;
-    private javax.swing.JButton Report;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    // End of variables declaration//GEN-END:variables
+
 }

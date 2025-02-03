@@ -9,7 +9,6 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
-import util.DatabaseConnection;
 import javax.swing.*;
 
 
@@ -335,7 +334,7 @@ public class BookAppointments extends javax.swing.JFrame {
         // --- Start of Custom UI Code ---
         getContentPane().setBackground(new java.awt.Color(240, 240, 240));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(250, 249, 246));
         BookPanel.setBackground(new java.awt.Color(250, 250, 250));
         jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder());
         BookPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder());
@@ -416,7 +415,7 @@ public class BookAppointments extends javax.swing.JFrame {
             int rowsAffected = stmt.executeUpdate();
             if (rowsAffected > 0) {
                 JOptionPane.showMessageDialog(this, "Appointment booked successfully.");
-                sendNotification(patient_id,"Your appointment was successfully created!" );
+                sendNotification(patient_id,"Your appointment was successfully booked!" );
 
                 SwingUtilities.invokeLater(this::populateJobTable); // Refresh the table after insertion
 

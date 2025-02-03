@@ -410,7 +410,7 @@ public class Manage_patient_records extends javax.swing.JFrame {
 
         getContentPane().setBackground(new java.awt.Color(240, 240, 240));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(250, 249, 246));
         jPanel2.setBackground(new java.awt.Color(250, 250, 250));
         jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder());
         jPanel2.setBorder(javax.swing.BorderFactory.createEmptyBorder());
